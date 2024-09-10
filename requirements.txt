@@ -1,0 +1,18 @@
+numpy
+matplotlib
+pandas
+psycopg2-binary
+altair
+bokeh
+jupyter
+jupyter_bokeh
+squarify
+bokeh_sampledata
+openpyxl
+scipy
+# ipywidgets 
+# widgetsnbextension 
+# ipympl
+# jupyter 
+# jupyter_contrib_nbextensions
+seaborn
