@@ -16,3 +16,4 @@ scipy
 # jupyter 
 # jupyter_contrib_nbextensions
 seaborn
+holoviews
