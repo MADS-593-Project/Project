@@ -6,6 +6,7 @@ altair
 bokeh
 jupyter
 jupyter_bokeh
+jupyterthemes
 squarify
 bokeh_sampledata
 openpyxl
