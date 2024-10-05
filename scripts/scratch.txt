@@ -12,3 +12,22 @@
 #        'MAJOR2_TERM_TERM_YEAR', 'MAJOR3_TERM_TERM_ID',
 #        'MAJOR3_TERM_TERM_DESCRIPTION', 'MAJOR3_TERM_TERM_NAME',
 #        'MAJOR3_TERM_TERM_YEAR']
+
+
+
+
+
+# occupations LEVEL 1
+# [nan, 'Education, training, and library occupations',
+#        'Life, physical, and social science occupations',
+#        'Architecture and engineering occupations',
+#        'Computer and mathematical occupations',
+#        'Arts, design, entertainment, sports, and media occupations',
+#        'Healthcare support occupations',
+#        'Office and administrative support occupations',
+#        'Management occupations',
+#        'Business and financial operations occupations',
+#        'Healthcare practitioners and technical occupations',
+#        'Community and social service occupations',
+#        'Healthcare practitioner and technical occupations',
+#        'Unclassified']
