@@ -72,7 +72,7 @@ def get_short_names(level, metric) -> dict:
                 'Education, training, and library occupations' : 'Education',
                 'Farming, fishing, and forestry occupations' : 'Natural Resources',
                 'Food preparation and serving related occupations' : 'Food',
-                'Healthcare practitioners and technical occupations' : 'Med Pract',
+                'Healthcare practitioners and technical occupations' : 'Med Pract', # 'Med Pract' suppressed because it is near 0 for students
                 'Healthcare support occupations' : 'Healthcare',
                 'Installation, maintenance, and repair occupations' : 'Facilities',
                 'Legal occupations' : 'Legal',
@@ -124,7 +124,7 @@ def get_short_names(level, metric) -> dict:
                 'Construction and extraction occupations' : 'Construction',
                 'Farming, fishing, and forestry occupations' : 'Natural Resources',
                 'Food preparation and serving related occupations' : 'Food',
-                'Healthcare support occupations' : 'Health',
+                'Healthcare support occupations' : 'Health',  # 'Health' suppressed because it is near 0 for students
                 'Installation, maintenance, and repair occupations' : 'Facilities',
                 'Management, business, and financial operations occupations' : 'Bus',
                 'Office and administrative support occupations' : 'Office',
@@ -186,13 +186,13 @@ def get_format_parameters(metric, number_of_groups) -> dict:
                         'palette': palette},
             'l2' : {'x_offset': 8, 
                     'y_offset': -15,
-                    'text_font_size': "24pt",
+                    'text_font_size': "23pt",
                     'text_baseline': "top",
                     'text_color': 'black'
                     },
             'l1' : {'x_offset': 8, 
                     'y_offset': 4,
-                    'text_font_size': "18pt",
+                    'text_font_size': "17pt",
                     'text_baseline': "top",
                     'text_color': 'white'
                     },
