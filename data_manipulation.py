@@ -156,7 +156,6 @@ def get_palette(number_of_groups) -> dict:
 def get_format_parameters(metric, number_of_groups) -> dict:
     
     palette = get_palette(number_of_groups=number_of_groups)
-    print(number_of_groups,' - ', palette)
     label_offset_dict = { 
         'default':{
                 'block':{'line_width': 1, 
@@ -219,7 +218,6 @@ def get_format_parameters(metric, number_of_groups) -> dict:
     return label_offset_dict[metric] if metric in label_offset_dict.keys() else label_offset_dict[metric]['default']
 
 def get_student_record_df() -> pd.DataFrame:
-    
     """
     Manipulates student data record analysis.
     """ 
@@ -423,3 +421,39 @@ def get_df_list_final():
 
     df_record_occupation_level_grouped_by_year_filtered, df_occupation_level_mapping = get_df_record_occupation_level_grouped_by_year_filtered(get_student_record_df())
     return get_df_level_list(df_record_occupation_level_grouped_by_year_filtered, df_occupation_level_mapping)
+
+def get_bls_data_2002_to_2015():
+    """
+    Imports and manipulates BLS data from 2002 to 2015.
+    """ 
+
+    # Define target years to import.
+    tabs = ['2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003']
+
+    # Define column names for BLS dataset.
+    columns = ['level', 
+                'l3','l2','l1','l0',
+                'occupation', 
+                'total_16_years_and_over_py', 
+                'total_16_years_and_over',
+                'male_16_years_and_over_py', 
+                'male_16_years_and_over',
+                'male_20_years_and_over_py', 
+                'male_20_years_and_over',
+                'female_16_years_and_over_py', 
+                'female_16_years_and_over',
+                'female_20_years_and_over_py', 
+                'female_20_years_and_over']
+
+    # Loop through each tab representative of one year and append to a single dataframe.
+    df_bls_all = pd.DataFrame()
+    for tab in tabs:
+        df_bls_next = pd.read_excel('./data/bls_cpsaat09_2002_to_2015.xlsx', sheet_name=str(tab), header=3).fillna('Unknown')
+        df_bls_next.columns = columns
+        df_bls_next['year'] = str(tab)
+        df_bls_all = pd.concat([df_bls_all, df_bls_next])
+
+    # Filter out empty records labeled as 'Unknown'. This is due to file format leaving gaps in records.
+    df_bls_all_filtered = df_bls_all[df_bls_all['occupation'] != 'Unknown']
+
+    return df_bls_all_filtered
